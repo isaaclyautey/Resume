@@ -271,3 +271,14 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+# VSCode
+.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# pdf output
+*.pdf
