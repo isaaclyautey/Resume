@@ -35,12 +35,13 @@
 \setmainfont{Adobe Garamond Pro} % Main document font
 
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Section formatting
+\titlespacing*{\section}{0cm}{4pt}{4pt}
 
 \pagestyle{scrheadings} % Print the headers and footers on all pages
 
-\addtolength{\voffset}{-0.5in} % Adjust the vertical offset - less whitespace at the top of the page
+\addtolength{\voffset}{0cm} % Adjust the vertical offset - less whitespace at the top of the page
 \addtolength{\textheight}{3cm} % Adjust the text height - less whitespace at the bottom of the page
-\geometry{margin={0.5in}} % Adjust the margin size
+\geometry{margin={1cm}} % Adjust the margin size - horizontal whitespace
 
 \newcommand{\gray}{\rowcolor[gray]{.90}} % Custom highlighting for the work experience and education sections
 
@@ -54,7 +55,7 @@
 
 \renewcommand{\headfont}{\normalfont\rmfamily} % Font settings for footer
 
-\footheight=32pt
+\footheight=64pt % double check footer
 
 \cofoot{
 \addfontfeature{LetterSpace=20.0}\fontsize{12.5}{17}\selectfont % Letter spacing and font size
@@ -74,7 +75,7 @@
 
 {\addfontfeature{LetterSpace=20.0}\fontsize{36}{36}\selectfont\scshape Isaac P. Lyautey} % Your name at the top
 
-\vspace{1.5cm} % Extra whitespace after the large name at the top
+%\vspace{0cm} % Extra whitespace after the large name at the top
 
 %----------------------------------------------------------------------------------------
 %	OBJECTIVE
@@ -94,40 +95,45 @@ An engineering COOP from late January to early August.
     \gray Period & \textbf{January 2019 --- August 2019}\\
     \gray Employer & \textbf{Quest Global} \hfill Windsor Locks, Connecticut\\
     \gray Job Title & \textbf{Industrial Engineer}\\
-    &Accomplishments
-    \begin{itemize}
-        \item Labor Variance
+    \multicolumn{2}{>{\hsize=0.97\linewidth}X}{
+        \vspace{-10pt}
         \begin{itemize}
-            \item Collected the production demand, clock hours, and part routings to map predicted vs actual labor times across all operations in all cells.
-            \item Data was collected into a SQL database and through various manipulations produced an view for PowerBi.
+            \item Labor Variance \&{} Capacity
+            \begin{itemize}
+                \item Collected the production demand, clock hours and part routings to map predicted vs actual labor times across all operations in all cells.
+                Data was collected and compiled into a SQL database and through various manipulations produced an view for PowerBi interaction.
+            \end{itemize}
+            \item Part Tracking
+            \begin{itemize}
+                \item Identified cells in which improved part tracking could be implemented. 
+                I focused on cells which relied on one-another in sequence and 
+                created an automated framework for part tracking and progression using SQL, \Csharp{} and VB.NET.
+            \end{itemize}
+            \item Rate Board
+            \begin{itemize}
+                \item Created an app for operators to progress a part through the part tracking framework. 
+                This interface used WinForms and Entity Framework to pull data and display it on screen. 
+                \item Rate Board interface displayed the priority for specific part numbers, 
+                their stage in the process, and how long they've been in WIP.
+                This was implemented with a scanner \& touchscreen setup for operator ease of use.
+                The software recorded operation timings to verify labor standards.
+            \end{itemize}
+            \item Playbook - Task Scheduling
+            \begin{itemize}
+                \item Participated in a factory-wide event to analyse the production-pacing process and find ways to improve its productivity. 
+                Here the constraint was found and after improvements productivity increased \textasciitilde30\%{}. 
+                Improvements included ergonomic adjustments, improved fixtures, layout adjustments and per-shift scheduling.
+            \end{itemize}
         \end{itemize}
-        \item Part Tracking
-        \begin{itemize}
-            \item Identified cells in which improved part tracking could be implemented. 
-            I focused on cells which relied on one-another in sequence and 
-            created an automated framework for part tracking and progression using SQL, \Csharp{}, and VB.NET.
-        \end{itemize}
-        \item Rate Board
-        \begin{itemize}
-            \item Created an app for operators to progress a part through the Part Tracking framework. 
-            This interface used WinForms and Entity Framework to pull data and display it on screen. 
-            \item Interface displayed the priority for specific part numbers, their stage in the process, and how long they've been in WIP.
-            \item Implemented a scanner & touchscreen setup for operator ease of use and tracked operation timings.
-        \end{itemize}
-        \item Playbook - Task Scheduling
-        \begin{itemize}
-            \item Participated in a factory-wide event to analyse the production-pacing process and find ways to improve its productivity.
-            \item After improvements productivity increased ~30\%{}
-        \end{itemize}
-        \item Capacity
-    \end{itemize}
+    }
+    \vspace{-10pt}
 \end{tabularx}
 
-\vspace{12pt}
+%\vspace{12pt}
 
 \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
     \gray Period & \textbf{August 2015 --- October 2018}\\
-    \gray Employer & \textbf{Delmonico's Italian Steakhouse} \hfill Windsor Locks, Connecticut\\
+    \gray Employer & \textbf{Delmonico's Italian Steakhouse} \hfill Rochester, New York\\
     \gray Job Title & \textbf{Waitstaff/Kitchen}\\
     % &Skills
     % \begin{itemize}
@@ -150,12 +156,18 @@ An engineering COOP from late January to early August.
 
 \section{Education}
 
+%\noindent\setlength\extrarowheight{0pt}
 \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
     \gray Period & \textbf{August 2018 --- Present}\\
     \gray Degree & \textbf{Bachelor of Science in Mechanical Engineering}\\
+    \gray Graduation & \textbf{June 2021}\\
     \gray GPA & \textbf{3.63}\\
     \gray School & \textbf{Rochester Institute of Technology} \hfill Rochester, New York\\
     %& Extra information about degree
+    Classes & Fluid Mechanics \hfill Mechanics of Materials \hfill Applied Statistics \hfill Thermodynamics\\
+    &Heat Transfer I \hfill Mechanical Design \& Prototyping \hfill Engineering Design Lab \\
+    &Material Science \hfill Matlab \hfill 
+    Computing with Excel \hfill Statics \hfill Dynamics
 \end{tabularx}
 
 \vspace{12pt}
@@ -183,5 +195,4 @@ An engineering COOP from late January to early August.
 %----------------------------------------------------------------------------------------
 
 \end{center}
-
 \end{document}
