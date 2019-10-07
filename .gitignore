@@ -282,3 +282,9 @@ TSWLatexianTemp*
 
 # pdf output
 *.pdf
+
+# windows folder config
+desktop.ini
+
+# don't know what this is from
+*.deb
