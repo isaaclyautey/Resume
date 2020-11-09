@@ -14,15 +14,15 @@
 % License:
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %
-% The main font used in this template, Adobe Garamond Pro, does not 
+% The main font used in this template, Adobe Garamond Pro, does not
 % come with Windows by default. You will need to download it in
-% order to get an output as in the preview PDF. Otherwise, change this 
-% font to one that does come with Windows or comment out the font line 
+% order to get an output as in the preview PDF. Otherwise, change this
+% font to one that does come with Windows or comment out the font line
 % to use the default LaTeX font.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper, oneside, final]{scrartcl} % Paper options using the scrartcl class
+\documentclass[a4paper, oneside, final, 10pt]{scrartcl} % Paper options using the scrartcl class
 
 \usepackage{scrlayer-scrpage} % Provides headers and footers configuration
 \usepackage{titlesec} % Allows creating custom \section's
@@ -30,9 +30,10 @@
 \usepackage{tabularx,colortbl} % Advanced table configurations
 \usepackage{fontspec} % Allows font customization
 \usepackage{geometry}
+\usepackage{enumitem}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Adobe Garamond Pro} % Main document font
+\setmainfont{EB Garamond} % Main document font
 
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Section formatting
 \titlespacing*{\section}{0cm}{4pt}{4pt}
@@ -59,13 +60,15 @@
 
 \cofoot{
 \addfontfeature{LetterSpace=20.0}\fontsize{12.5}{17}\selectfont % Letter spacing and font size
-282 Brayton RD {\large\textperiodcentered} Rochester {\large\textperiodcentered} New York {\large\textperiodcentered} 14616\\ % Your mailing address
-{\Large\Letter} isaac.lyautey@gmail.com \ {\Large\Telefon} (585) 773--5686 % Your email address and phone number
+438 Maplewood Ave {\large\textperiodcentered} Rochester {\large\textperiodcentered} New York {\large\textperiodcentered} 14613\\
+{\Large\Letter} isaac.lyautey@gmail.com \ {\Large\Telefon} (585) 773--5686
 }
 
 %----------------------------------------------------------------------------------------
 
 \begin{document}
+
+\setlist[itemize]{leftmargin=*}
 
 \begin{center} % Center everything in the document
 
@@ -73,9 +76,7 @@
 % �HEADER SECTION
 %----------------------------------------------------------------------------------------
 
-{\addfontfeature{LetterSpace=20.0}\fontsize{36}{36}\selectfont\scshape Isaac P. Lyautey} % Your name at the top
-
-%\vspace{0cm} % Extra whitespace after the large name at the top
+{\addfontfeature{LetterSpace=20.0}\fontsize{36}{36}\selectfont\scshape Isaac P. Lyautey}
 
 %----------------------------------------------------------------------------------------
 %	OBJECTIVE
@@ -83,7 +84,7 @@
 
 \section{Objective}
 \begin{center}
-    An engineering COOP from late January to early August.
+    A technical engineering position for April 2021.
 \end{center}
 
 
@@ -93,92 +94,111 @@
 
 \section{Work Experience}
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-    \gray{}Period & \textbf{January 2019 --- August 2019}\\
-    \gray{}Employer & \textbf{Quest Global} \hfill Windsor Locks, Connecticut\\
-    \gray{}Job Title & \textbf{Industrial Engineer}\\
-    \multicolumn{2}{>{\hsize=0.97\linewidth}X}{
-        \vspace{-10pt}
-        \begin{itemize}
-            \item{Labor Variance \&{} Capacity}
-            \begin{itemize}
-                \item{Collected the production demand, clock hours and part routings to map predicted vs actual labor times across all operations in all cells.
-                Data was collected and compiled into a SQL database and through various manipulations produced an view for PowerBi interaction.}
-            \end{itemize}
-            \item Part Tracking
-            \begin{itemize}
-                \item{Identified cells in which improved part tracking could be implemented. 
-                I focused on cells which relied on one-another in sequence and 
-                created an automated framework for part tracking and progression using SQL, \Csharp{} and VB.NET.}
-            \end{itemize}
-            \item {Rate Board}
-            \begin{itemize}
-                \item{Created an app for operators to progress a part through the part tracking framework. 
-                This interface used WinForms and Entity Framework to pull data and display it on screen.}
-                \item{Rate Board interface displayed the priority for specific part numbers, 
-                their stage in the process, and how long they've been in WIP. \@{}This was implemented with a scanner \& touchscreen setup for operator ease of use.
-                The software recorded operation timings to verify labor standards.}
-            \end{itemize}
-            \item{Playbook \&{} Task Scheduling}
-            \begin{itemize}
-                \item{Participated in a factory-wide event to analyse the production-pacing process and find ways to improve its productivity. 
-                Here the constraint was found and after improvements productivity increased \textasciitilde30\%{}. 
-                Improvements included ergonomic adjustments, improved fixtures, layout adjustments and per-shift scheduling.}
-            \end{itemize}
-        \end{itemize}
-    }
+\begin{tabularx}{0.97\linewidth}{XX|XX}
+    \gray{}Period    & \textbf{January 2019 --- August 2019} & Period & \textbf{January 2020 --- August 2020}\\
+    \gray{}Employer  & \textbf{Quest Global}                 & Employer & \textbf{Howmet Aerospace} \\
+    \gray{}Location  & \textbf{Windsor Locks, Connecticut}   & Location & \textbf{Niles, Ohio}\\
+    \gray{}Job Title & \textbf{Industrial Engineer}          & Job Title & \textbf{Process Engineer}\\
     \vspace{-10pt}
 \end{tabularx}
 
-%\vspace{12pt}
+\vspace{-10pt}
+\begin{tabularx}{0.97\linewidth}{X|X}
+    \vspace{-10pt}
+    \begin{itemize}\setlength\itemsep{0em}
+        \item{Labor Variance \&{} Capacity}
+        \begin{sloppypar}
+            Collected the production demand, clock hours and part routings to map predicted vs actual labor times across all operations in all cells.
+            Data was collected and compiled into a SQL database and through various manipulations produced an view for PowerBi interaction.
+        \end{sloppypar}
+        \item{Part Tracking}
+        \begin{sloppypar}
+            Identified cells in which improved part tracking could be implemented.
+            Then implemented an automated framework for part tracking and progression using SQL, \Csharp{} and VB.NET.
+        \end{sloppypar}
+        \item {Rate Board}
+        \begin{sloppypar}
+            Rate Board interface displayed the priority for specific part numbers, stage in the process, and how long in WIP. \@{}
+            This was implemented with a scanner \& touchscreen interface.
+        \end{sloppypar}
+        \item{Playbook \&{} Task Scheduling}
+        \begin{sloppypar}
+            Facilitated factory-wide events to analyse the production-pacing process and find ways to improve productivity.
+            Improvements included ergonomic adjustments, improved fixtures, layout adjustments and per-shift scheduling.
+        \end{sloppypar}
+    \end{itemize} & \vspace{-10pt} \begin{itemize}\setlength\itemsep{0em}
+        \item{In Process Checks}
+        \begin{sloppypar}
+            Grind process featured high dimensional variability causing out of tolerance conditions.
+            Created and implemented Standard Work Proceduce in previosuly un-controlled process to reduce said variability.
+        \end{sloppypar}
+        \item{Operator Training}
+        \begin{sloppypar}
+            Replaced in-process engineering checks with SWP defining expectations of the process, common defect scenarios
+            and defined escalation paths when tolerance is endangered.
+        \end{sloppypar}
+        \item {Automated Engineering Diagrams}
+        \begin{sloppypar}
+            Reduce engineering overhead by automating drawing creation which was originally done with drawing PowerPoint.
+            A \Csharp{} \&{} WPF tool was created which drew saw cutting diagrams using user input dimensions. The charts were
+            then output to PowerPoint/.PDF files for printing.
+        \end{sloppypar}
+        \item {Automated Inspection Data Collection}
+        \begin{sloppypar}
+            Work with dimensional inspection operators to create a streamlined data entry interface which reduced
+            input error and increased readability over the old system both on the operator's end and engineering's. This
+            app incorporated WPF, EF, and SharePoint.
+        \end{sloppypar}
+    \end{itemize}
+\end{tabularx}
 
 \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
     \gray{}Period & \textbf{August 2015 --- October 2018}\\
     \gray{}Employer & \textbf{Delmonico's Italian Steakhouse} \hfill Rochester,  New York\\
-    \gray{}Job Title & \textbf{Waitstaff/Kitchen}
-    % &Skills
-    % \begin{itemize}
-    %     \item Operate in a team environment to maximize guest experience, turnover, and minimize waste.
-    % \end{itemize}
 \end{tabularx}
 
-% \vspace{12pt}
+%----------------------------------------------------------------------------------------
+%	Projects
+%----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-% \gray Period & \textbf{March 2009 --- August 2010 (Part Time)}\\
-% \gray Employer & \textbf{Buy More} \hfill New York, USA\\
-% \gray Job Title & \textbf{Supermarket Clerk}\\
-% � � � �& Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et auctor neque. Nullam ultricies sem sit amet magna tristique imperdiet.
-% \end{tabularx}
+\section{Notable Projects}
+
+% MSD
+\begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{3cm}XX}
+    Inclusivity Retractable Game Net
+    & \vspace{-16pt} \begin{itemize}\setlength\itemsep{0em}
+        \item{Design a production ready handicapped assistive device in a structured team environment.}
+        \item{Interface with customer for use case, design requirements and necessary standards.}
+        \item{Rapid prototyping of CAD models through use of 3D printed plastics entailing unique dimensional tolerancing.}
+    \end{itemize}
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 
+\vspace{-18pt}
 \section{Education}
 
-%\noindent\setlength\extrarowheight{0pt}
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-    \gray{}Period & \textbf{August 2018 --- Present}\\
-    \gray{}Degree & \textbf{Bachelor of Science in Mechanical Engineering}\\
-    \gray{}Graduation & \textbf{June 2021}\\
-    \gray{}GPA & \textbf{3.63}\\
-    \gray{}School & \textbf{Rochester Institute of Technology} \hfill Rochester, New York\\
-    %& Extra information about degree
-    Classes & Fluid Mechanics \hfill System Dynamics \hfill Applied Statistics \hfill Thermodynamics\\
-    &Heat Transfer I \hfill Mechanical Design \& Prototyping \hfill Engineering Design Lab \hfill Excel \\
-    &Material Science \hfill Matlab \hfill 
-    Mechanics of Materials \hfill Statics \hfill Dynamics
+% RIT
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}XX}
+    \gray{}Period & \textbf{August 2018 --- Present} & Graduation \textbf{March 2021} \hfill\\
+    \gray{}Degree & \textbf{Bachelor of Science in Mechanical Engineering} & GPA \textbf{3.14}\\
+    \gray{}School & \textbf{Rochester Institute of Technology} & Rochester, New York\\
 \end{tabularx}
 
-\vspace{12pt}
-
+% RIT Classes
 \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-    \gray{}Period & \textbf{August 2015 --- May 2018}\\
-    \gray{}Degree & \textbf{Associates in Engineering Science}\\
-    \gray{}GPA & \textbf{3.25}\\
-    \gray{}School & \textbf{Monroe Community College} \hfill Rochester, New York\\
-    %& Extra information about degree
+    Classes & Fluid Mechanics I\textbackslash{}II\hfill Classical Controls \hfill Senior Design \hfill Thermodynamics\\
+    &Heat Transfer I \hfill Mechanical Design \& Prototyping \hfill Engineering Applications Design Lab \hfill Excel \\
+    &Material Science \hfill Mechanics of Materials \hfill Statics \hfill Dynamics \hfill Probability \&{} Statistics I\textbackslash{}II
+\end{tabularx}
+
+% MCC
+\vspace{6pt}
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}XX}
+    \gray{}Period & \textbf{August 2015 --- May 2018} & GPA \textbf{3.25} \hfill\\
+    \gray{}Degree & \textbf{Associates in Engineering Science} & School \textbf{Monroe Community College} \hfill\\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -186,12 +206,11 @@
 %----------------------------------------------------------------------------------------
 
 \section{Skills}
-
-\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-    CAD & Solidworks, AutoCAD, PTC Creo \\
-    Tools & Excel, Matlab, Mathematica, PowerBi, SAP \\
-    Computer Languages & \Csharp{}, VB/A, Python, SQL, Java
-\end{tabular}
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{4cm}X|p{2cm}X}
+    Prototyping & 3D Printing, CNC Programming, Arduino Microcontroller, RPi, Waterjet, Welding, Soldering & Manufacturing & Ultrasonic Non-Distructive Testing, Dimensional Inspection, Grinding, Lathe, Mill, Paint Application\\
+    Tools & Excel, Matlab, PowerBi, SAP, SharePoint & CAD & Solidworks, AutoCAD, PTC Creo, Onshape\\
+    Computer Languages & \Csharp{}, VB/A, Python, SQL, Java & Other & Linux, Git\\
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 

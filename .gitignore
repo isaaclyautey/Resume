@@ -288,3 +288,6 @@ desktop.ini
 
 # don't know what this is from
 *.deb
+
+# vscode workspace
+*.code-workspace
