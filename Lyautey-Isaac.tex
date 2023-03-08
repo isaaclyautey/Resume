@@ -22,7 +22,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper, oneside, final, 10pt]{scrartcl} % Paper options using the scrartcl class
+\documentclass[a4paper, oneside, final, fontsize=9pt, usegeometry]{scrartcl} % Paper options using the scrartcl class
 
 \usepackage{scrlayer-scrpage} % Provides headers and footers configuration
 \usepackage{titlesec} % Allows creating custom \section's
@@ -31,6 +31,7 @@
 \usepackage{fontspec} % Allows font customization
 \usepackage{geometry}
 \usepackage{enumitem}
+\usepackage{colortbl}
 
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont{EB Garamond} % Main document font
@@ -50,17 +51,21 @@
 
 \newcommand{\Csharp}{C{\lserif\#}}
 
+\newcolumntype{Y}{>{\columncolor[gray]{0.9}}X}
+\newcolumntype{Z}{>{\columncolor[gray]{0.9}}p{2cm}}
+
 %----------------------------------------------------------------------------------------
-% �FOOTER SECTION
+% FOOTER SECTION
 %----------------------------------------------------------------------------------------
 
 \renewcommand{\headfont}{\normalfont\rmfamily} % Font settings for footer
 
-\footheight=64pt % double check footer
+\footheight=48pt % double check footer
 
 \cofoot{
-\addfontfeature{LetterSpace=20.0}\fontsize{12.5}{17}\selectfont % Letter spacing and font size
-1814 W Genesee St {\large\textperiodcentered} Syracuse {\large\textperiodcentered} New York {\large\textperiodcentered} 13204\\
+\addfontfeature{LetterSpace=20.0}\fontsize{8}{14}\selectfont % Letter spacing and font size
+38 Hindsdale St {\large\textperiodcentered} Rochester {\large\textperiodcentered} New York {\large\textperiodcentered} 14620\\
+\vspace{-3pt}
 {\Large\Letter} isaac.lyautey@gmail.com \ {\Large\Telefon} (585) 773--5686
 }
 
@@ -73,7 +78,7 @@
 \begin{center} % Center everything in the document
 
 %----------------------------------------------------------------------------------------
-% �HEADER SECTION
+% HEADER SECTION
 %----------------------------------------------------------------------------------------
 
 {\addfontfeature{LetterSpace=20.0}\fontsize{36}{36}\selectfont\scshape Isaac P. Lyautey}
@@ -84,9 +89,10 @@
 
 \section{Objective}
 \begin{center}
-    Obtain a result driven position in process/manufacturing engineering with which I can work with and lead cross-functional teams utlizing proven business and product optimization skills of Total Productive Management in order to acheive a high degree of quality, safety and a Lean Six Sigma culture.
+    Obtain a result driven position in process/manufacturing engineering as part of a cross-functional teams utlizing proven business and product optimization skills of Total Productive Management in order to acheive a high degree of quality, safety and a Lean Six Sigma culture.
 \end{center}
 
+\vspace{-12pt}
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE
@@ -94,30 +100,62 @@
 
 \section{Work Experience}
 
+% \vspace{-12pt}
+
 \begin{tabularx}{0.97\linewidth}{XX}
-    \gray{}Period    & \textbf{June 2021 --- Present}                    \\
-    \gray{}Employer  & \textbf{Huhtamaki Inc.}                    \\
-    \gray{}Location  & \textbf{Fulton, NY}                        \\
-    \gray{}Job Title & \textbf{Continuous Improvement Specialist} \\
     \vspace{-10pt}
+    {\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}ZY}
+        Period    & \textbf{June 2022 --- Present}                    \\
+        Employer  & \textbf{Eastman Kodak}                    \\
+        Location  & \textbf{Rochester, NY}                        \\
+        Job Title & \textbf{Equipment Reliability Engineer} \\
+    \end{tabularx}}
+    \begin{itemize}\setlength\itemsep{0em}
+        \item{Autonomous Maintenance \& Process Control}
+        \begin{sloppypar}
+            Implemented improved cleaning routines on 293M reducing process waste. Operators from coaters to lead operators have been educated on indicators poor process control and given guidelines through CAGs and SOPs on how to correct them with specified order. Out of norm are to be escalated to maintenance staff and/or engineering. Turned firefighting into teaching events with documentation and guidance.
+        \end{sloppypar}
+        \item{Machine Spare Parts}
+        \begin{sloppypar}
+            Designed and implemented spare parts storage room with inventory tracking. Identified critical machine spares broken down by cost vs. potential downtime. Necessary spares then ordered and stocked. Coordinate roller and impression sleeve orders, repairs, and recoating
+        \end{sloppypar}
+    \end{itemize} & \vspace{-10pt} \begin{itemize}\setlength\itemsep{0em}
+        \item{Digitial Factory}
+        \begin{sloppypar}
+            Pi Vision displays have been created and brought to shop floor monitors which are actively used for process control and autonomous maintenance activities. This includes displays at control panels and larger overhead displays. Exposed process information through Pi Vision to operations and maintenance staff identifying key process parameters. 
+        \end{sloppypar}
+        \item{Data Analysis and Automation}
+        \begin{sloppypar}
+            Created automation program in Python to collect and merge process (Pi and Dr. Schenk) data with quality bench data. Demonstrated ability to analyze aggregate process data and drive improvement through statistical tests and quality metrics such as t-tests, ANOVA tests and CpK calculations. Worked with Quality Engineer and Technician to automate and streamline COA process reducing overhead. Fulfilled data requests of Quality Engineer and customer for: Defect size and type Pinhole count correlation to defect map Registration analysis and comparisons before and after process changes
+        \end{sloppypar}
+    \end{itemize}
 \end{tabularx}
 
-\vspace{-10pt}
+\vspace{-8pt}
+
 \begin{tabularx}{0.97\linewidth}{XX}
-    \vspace{-10pt}
-    \begin{itemize}\setlength\itemsep{0em}
+    \hline
+    \vspace{-6pt}
+    {\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}ZY}
+        Period    & \textbf{June 2021 --- June 2022}            \\
+        Employer  & \textbf{Huhtamaki Inc.}                     \\
+        Location  & \textbf{Fulton, NY}                         \\
+        Job Title & \textbf{Continuous Improvement Specialist}  \\
+    \end{tabularx}}
+    \begin{itemize}\setlength\itemsep{0em}       
         \item{Six Sigma Green Belt}
         \begin{sloppypar}
-            Lead 2 Six Sigma teams, one tackling a printing process focusing on improving OEE by reducing scrap and non-value-added material use (~110k YOY); The other team tackled productivity discrepancies between generations of forming equipment leading to large gains in sharing of ideas (est. YOY >76k)
+            Lead 2 Six Sigma teams, the first tackling a printing process focusing on improving OEE by reducing scrap and non-value-added material use; The second team tackled productivity discrepancies between generations of forming equipment leading to large gains in sharing of ideas.
         \end{sloppypar}
         \item{Various Process Improvements}
         \begin{sloppypar}
             Improvements to process controls include oil tank monitoring systems, automation of clerical duties and leading a Process Control Systems rollout in all departments. PCS includes a combination of real-time machine performance and safety/quality/MEI reports displayed using Osisoft PI Vision.
         \end{sloppypar}
-    \end{itemize} & \vspace{-10pt} \begin{itemize}\setlength\itemsep{0em}
+    \end{itemize} & \vspace{-10pt} 
+    \begin{itemize}\setlength\itemsep{0em}
         \item{Total Productive Maintenance Leader}
         \begin{sloppypar}
-            Lead 1 Kaizen/Lean event targeting a machine with high oil consumption (YOY ~11k) which was heavily driven through teamwork between operations and maintenance staff.
+            Lead a Kaizen/Lean event targeting a machine with high oil consumption which was heavily driven through teamwork between operations and maintenance staff. Through regular meetings of a cross-functional team multiple high yield opportunities were identified, trialed on the worst offending equipment and then dispursed to the entire fleet yielding COGS improvement.
         \end{sloppypar}
         \item{Data Analyst}
         \begin{sloppypar}
@@ -126,7 +164,9 @@
     \end{itemize}
 \end{tabularx}
 
-\begin{tabularx}{0.97\linewidth}{XX|XX}
+\vspace{-8pt}
+
+\begin{tabularx}{0.97\linewidth}{ZY|ZY}
     \gray{}Period    & \textbf{January 2019 --- August 2019} & Period & \textbf{January 2020 --- August 2020}\\
     \gray{}Employer  & \textbf{Quest Global}                 & Employer & \textbf{Howmet Aerospace} \\
     \gray{}Location  & \textbf{Windsor Locks, Connecticut}   & Location & \textbf{Niles, Ohio}\\
@@ -141,24 +181,16 @@
             Collected the production demand, clock hours and part routings to map predicted vs actual labor times across all operations in all cells.
             Data was collected and compiled into a SQL database and through various manipulations produced a view for PowerBi interaction.
         \end{sloppypar}
-        \item{Playbook \&{} Task Scheduling}
+        \item{Playbook, Task Scheduling \&{} Part Tracking}
         \begin{sloppypar}
             Facilitated factory-wide events to analyze the production-pacing process and find ways to improve productivity.
             Improvements included ergonomic adjustments, improved fixtures, layout adjustments and per-shift scheduling.
-        \end{sloppypar}
-        \item{Part Tracking}
-        \begin{sloppypar}
-            Identified cells in which improved part tracking could be implemented.
-            Then implemented an automated framework for part tracking and progression using SQL, \Csharp{} and VB.NET.
+            Implemented an automated framework for part tracking and progression using SQL, \Csharp{} and VB.NET
         \end{sloppypar}
     \end{itemize} & \vspace{-10pt} \begin{itemize}\setlength\itemsep{0em}
-        \item{In Process Checks}
+        \item{In Process Checks \&{} Operator Training}
         \begin{sloppypar}
-            Grind process featured high dimensional variability causing out of tolerance conditions.
             Created and implemented Standard Work Procedure in previously uncontrolled process to reduce said variability.
-        \end{sloppypar}
-        \item{Operator Training}
-        \begin{sloppypar}
             Replaced in-process engineering checks with SWP defining expectations of the process, common defect scenarios
             and defined escalation paths when tolerance is endangered.
         \end{sloppypar}
@@ -191,21 +223,18 @@
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 
-\vspace{-18pt}
+\vspace{-14pt}
 \section{Education}
 
 % RIT
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}XX}
-    \gray{}Period & \textbf{August 2018 --- May 2021} & Graduation \textbf{March 2021} \hfill\\
-    \gray{}Degree & \textbf{Bachelor of Science in Mechanical Engineering} & GPA \textbf{3.51}\\
-    \gray{}School & \textbf{Rochester Institute of Technology} & Rochester, New York\\
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X>{\raggedleft\scshape}p{2cm}X}
+    Degree & \textbf{Bachelor of Science in Mechanical Engineering} & School & \textbf{Rochester Institute of Technology}\\
+    Period & \textbf{August 2018 --- May 2021} & GPA & \textbf{3.51}\\
 \end{tabularx}
 
 % RIT Classes
 \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-    Classes & Fluid Mechanics I\textbackslash{}II\hfill Classical Controls \hfill Senior Design \hfill Thermodynamics\\
-    &Heat Transfer I \hfill Mechanical Design \& Prototyping \hfill Engineering Applications Design Lab \hfill  Dynamics\\
-    &Material Science \hfill Mechanics of Materials \hfill CFD \hfill Stochastic Processes \hfill Probability \&{} Statistics I\textbackslash{}II
+    Classes & Classical Controls \hfill CFD \hfill Fluid Mechanics I\textbackslash{}II \hfill Stochastic Processes \hfill Probability \&{} Statistics I\textbackslash{}II\\
 \end{tabularx}
 
 % % MCC
@@ -219,11 +248,12 @@
 %	SKILLS
 %----------------------------------------------------------------------------------------
 
-\vspace{-18pt}
+\vspace{-6pt}
+
 \section{Skills}
 \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{4cm}X|p{2cm}X}
-    Prototyping & 3D Printing, CNC Programming, Arduino Microcontroller, RPi, Water Jet, Welding, Soldering & Manufacturing & Ultrasonic Non-Distructive Testing, Dimensional Inspection, Grinding, Lathe, Mill, Paint Application\\
-    Tools & Excel, Matlab, PowerBi, SAP, SharePoint, PI (Osisoft), PI Vision, BPCS & CAD & Solidworks, AutoCAD, PTC Creo, Onshape\\
+    Prototyping & 3D Printing, CNC Programming, Arduino Microcontroller, RPi, Water Jet, Welding & Manufacturing & Ultrasonic Non-Distructive Testing, Dimensional Inspection, Grinding\\
+    Tools & Excel, Matlab, PowerBi, SAP, SharePoint, PI, PI Vision, PI AF & CAD & Solidworks, AutoCAD, PTC Creo, Onshape\\
     Computer Languages & \Csharp{}, VB/A, Python, SQL, Java & Other & Linux, Git\\
 \end{tabularx}
 
